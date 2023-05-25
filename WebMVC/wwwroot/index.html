@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/logo.png">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <title>ФАІТ</title>
+</head>
+
+<body>
+    <div class="container flex-container">
+        <div class="sidebar">
+            <div class="sidebar__logo">
+                <a href="#" class="sidebar__logo-link">
+                    <img class="sidebar__logo-img" src="img/logo.png" alt="">
+                    <span class="sidebar__logo-text">КНУБА</span>
+                </a>
+            </div>
+
+            <ul class="sidebar__menu">
+                <li class="sidebar__menu-item active"><a href="#" data-page="main--page"
+                        class="sidebar__menu-link">Головна</a>
+                </li>
+                <li class="sidebar__menu-item sidebar__dropdown">
+                    <a href="#" class="sidebar__menu-link">Картка студента</a>
+                    <span class="fas fa-caret-down"></span>
+                </li>
+                <li class="sidebar__menu-item sidebar__menu-subitem"><a href="#" data-page="student-card--show-page"
+                        class="sidebar__menu-link">Відобразити</a></li>
+                <li class="sidebar__menu-item sidebar__menu-subitem"><a href="#" data-page="student-card--add-page"
+                        class="sidebar__menu-link">Додати</a></li>
+
+                <li class="sidebar__menu-item sidebar__dropdown">
+                    <a href="#" class="sidebar__menu-link">Навчальний план</a>
+                    <span class="fas fa-caret-down"></span>
+                </li>
+                <li class="sidebar__menu-item sidebar__menu-subitem"><a href="#" data-page="curriculum--show-page"
+                        class="sidebar__menu-link">Відобразити</a></li>
+                <li class="sidebar__menu-item sidebar__menu-subitem"><a href="#" data-page="curriculum--add-page"
+                        class="sidebar__menu-link">Додати</a></li>
+
+                <li class="sidebar__menu-item"><a href="#" data-page="transfer--page"
+                        class="sidebar__menu-link">Перевести</a></li>
+                <li class="sidebar__menu-item"><a href="#" data-page="progress--page"
+                        class="sidebar__menu-link">Успішність</a></li>
+                <li class="sidebar__menu-item"><a href="#" data-page="create-report--page"
+                        class="sidebar__menu-link">Створити звіт</a></li>
+
+                <li class="sidebar__menu-item sidebar__dropdown">
+                    <a href="#" class="sidebar__menu-link">Групи</a>
+                    <span class="fas fa-caret-down"></span>
+                </li>
+                <!-- <li class="sidebar__menu-item sidebar__menu-subitem"><a href="#" data-page="group--actualize-page"
+                        class="sidebar__menu-link">Актуалізувати</a></li> -->
+                <li class="sidebar__menu-item sidebar__menu-subitem"><a href="#" data-page="group--add-page"
+                        class="sidebar__menu-link">Додати</a></li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="main-wrapper">
+                <div class="main__header">
+                    <h1 class="main__header-text">Факультет автоматизацїї та інформаційних технологій</h1>
+                </div>
+                <div class="main__content">
+                    <div class="loading-mask">
+                        <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33"
+                                r="30"></circle>
+                        </svg>
+                    </div>
+
+                    <div class="content">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="notification">
+            <ul class="notification__list">
+
+            </ul>
+        </div>
+    </div>
+    <script src="js/main.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+.group__actualize {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(240px, 300px));
+    justify-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    &-btn-add {
+        margin-top: 5px;
+    }
+
+    // &-filter {
+    //     position: relative;
+
+    //     &::after {
+    //         content: "";
+    //         position: absolute;
+
+    //         top: 0;
+    //         bottom: 0;
+    //         right: -24px;
+    //         width: 1px;
+    //         background-color: #337ab7;
+    //         opacity: .3;
+    //     }
+    // }
+
+    &-title {
+        padding: 10px;
+        border-bottom: 1px solid rgb(114, 114, 114);
+    }
+
+    &-items {
+        padding: 10px;
+    }
+}

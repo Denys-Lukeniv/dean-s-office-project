@@ -1,0 +1,330 @@
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+    
+.container {
+    max-width: 100vw;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.display-none {
+    display: none !important;
+}
+
+.btn {
+    border: none;
+    padding: 14px 28px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: all .3s;
+
+    &:hover:not([disabled]) {
+        background-color: #ee75a7;
+        color: #fff
+    }
+
+    & + & {
+        margin-left: 20px;
+    }
+
+    &-icon + &-text {
+        margin-left: 7px;
+    }
+
+    &-hide {
+        display: none;
+    }
+
+    &-clear {
+        color: rgb(255, 134, 134);
+        margin-left: 10px;
+        transition: all .3s;
+
+        &:hover {
+            color: rgb(255, 0, 0);
+        }
+    }
+}
+
+.sidebar {
+    position: fixed;
+    width: 250px;
+    min-height: 100vh;
+    padding: 40px 0px;
+    background-color: #003586;
+    color: #fff;
+
+    &__logo {
+        text-align: center;
+        margin-bottom: 50px;
+
+        &-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &-img {
+            width: 36px;
+            margin-right: 10px;
+        }
+
+        &-text {
+            font-size: 36px;
+            font-weight: 400;
+        }
+    }
+
+    &__menu {
+        &-item {
+            font-size: 20px;
+            padding: 10px 20px 10px 40px;
+            transition: background-color .2s;
+
+            &.active {
+                background-color: #fff;
+                color: #ff0095;
+            }
+        }
+
+        &-subitem {
+            padding-left: 70px;
+            font-size: 17px;
+        }
+
+        &-link {
+            transition: color .3s;
+            &:hover {
+                color: #e63f86;
+            }
+        }
+    }
+}
+
+.main {
+    margin-left: 250px;
+    margin-right: 100px;
+    width: 100%;
+
+    &__content {
+        position: relative;
+    }
+
+    &-wrapper {
+        min-height: 100vh;
+        max-width: fit-content;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+
+    &__header {
+        text-align: center;
+        font-size: 32px;
+        font-weight: 300;
+        margin-bottom: 80px;
+
+        &-text {
+            padding: 0 15px;
+        }
+    }
+
+    &__page {
+        &-title,
+        &-subtitle {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    
+        &-title {
+            font-size: 20px;
+        }
+
+        &-subtitle {
+            font-size: 16px;
+        }
+    }
+
+    &__col,
+    &__col-2,
+    &__col-3,
+    &__col-4,
+    &__col-2to1 {
+        display: grid;
+        column-gap: 20px;
+    }
+    &__col-2 {
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+        column-gap: 40px;
+    }
+
+    &__col-3 {
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+    }
+
+     &__col-4 {
+        grid-template-columns: repeat(4, minmax(100px, 1fr));
+    }
+
+    &__col-2to1 {
+        grid-template-columns: minmax(100px, 2fr) minmax(100px, 1fr);
+    }
+
+    &__buttons {
+        margin: 20px;
+        text-align: center;
+    }
+}
+
+.fas,
+.far {
+    font-size: 16px;
+}
+
+.notification {
+    min-width: 100px;
+    max-width: 350px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        &-item {
+            background-color: rgb(100, 100, 100);
+            padding: 16px;
+            border-radius: 16px;
+            opacity: 0;
+            transition: opacity .7s;
+
+            &.showNotification {
+                opacity: 1;
+            }
+
+            &-container {
+                margin-bottom: 10px;
+            }
+
+            &-title {
+                font-size: 18px;
+            }
+
+            &-text {
+                font-size: 14px;
+            }
+
+            &.success {
+                color: rgb(8, 173, 49);
+                background-color: rgb(220, 255, 168);
+            }
+
+            &.warning {
+                color: rgb(173, 148, 8);
+                background-color: rgb(255, 242, 168);
+            }
+
+            &.error {
+                color: rgb(192, 11, 11);
+                background-color: rgb(255, 167, 167);
+            }
+
+            & + & {
+                margin-top: 10px;
+            }
+
+            .success-icon,
+            .warning-icon,
+            .error-icon {
+                margin-right: 10px;
+                font-size: 18px;
+            }
+
+        }
+
+
+    }
+}
+
+.loading-mask {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.61);
+
+    &.show {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+    }
+
+    $offset: 187;
+    $duration: 1.4s;
+    
+    .spinner {
+        animation: rotator $duration linear infinite;
+    }
+    
+    @keyframes rotator {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(270deg); }
+    }
+    
+    .path {
+        stroke-dasharray: $offset;
+        stroke-dashoffset: 0;
+        transform-origin: center;
+        animation:
+            dash $duration ease-in-out infinite, 
+            colors ($duration * 4) ease-in-out infinite;
+    }
+    
+    @keyframes colors {
+        0% { stroke: #4285F4; }
+        25% { stroke: #DE3E35; }
+        50% { stroke: #F7C223; }
+        75% { stroke: #1B9A59; }
+        100% { stroke: #4285F4; }
+    }
+    
+    @keyframes dash {
+        0% { stroke-dashoffset: $offset; }
+        50% {
+            stroke-dashoffset: $offset / 4;
+            transform: rotate(135deg);
+        }
+        100% {
+            stroke-dashoffset: $offset;
+            transform: rotate(450deg);
+        }
+    }
+}
+
+ 
